@@ -7,7 +7,7 @@ Preencha cada check com um 'X'.
 - [] Adicionei **apenas 1 imagem** neste PR
 - [] A imagem está em `assets/images/`
 - [] O formato é `.jpg`, `.jpeg`, `.png` ou `.gif`
-- [] O nome do arquivo é o título que aparecerá na Souzadex (ex.: `Astronauta.png` → "Astronauta")
+- [] O nome do arquivo é o título que aparecerá na Souzadex (ex.: `souza-principe.png` → "souza principe")
 - [] A imagem é uma foto de IA do Vitor Souza
 - [] Não modifiquei nenhum outro arquivo do projeto
 - [] O commit segue o padrão `feat: add [nome-da-imagem] to souzadex`

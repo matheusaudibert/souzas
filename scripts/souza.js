@@ -4,7 +4,7 @@
   var detail = document.getElementById("detail");
 
   function titleFromFile(file) {
-    return file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ");
+    return file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").toLowerCase();
   }
 
   var file = new URLSearchParams(window.location.search).get("foto");

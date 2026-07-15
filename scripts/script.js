@@ -4,7 +4,7 @@
   var grid = document.getElementById("grid");
 
   function titleFromFile(file) {
-    return file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ");
+    return file.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").toLowerCase();
   }
 
   // SOUZAS está em ordem cronológica; exibe os mais recentes primeiro.

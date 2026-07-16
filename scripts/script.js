@@ -2,7 +2,7 @@
   "use strict";
 
   var SIZE_OPTIONS = [20, 40, 60, 80];
-  var DEFAULT_SIZE = 40;
+  var DEFAULT_SIZE = 20;
 
   var grid = document.getElementById("grid");
   var pagination = document.getElementById("pagination");
@@ -211,8 +211,8 @@
   function apply() {
     var items = query
       ? allItems.filter(function (item) {
-          return titleFromFile(item.souza.file).indexOf(query) !== -1;
-        })
+        return titleFromFile(item.souza.file).indexOf(query) !== -1;
+      })
       : allItems;
 
     var totalPages = Math.max(1, Math.ceil(items.length / pageSize));

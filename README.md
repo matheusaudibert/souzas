@@ -7,7 +7,7 @@ A **Souzadex** é uma galeria colaborativa, uma pokédex, de fotos do Souza
 
 Cada Souza da galeria foi enviado por alguém da comunidade via pull request.
 
-**Galeria:** https://souzadex.vercel.app/
+**Galeria:** https://souzadex.com
 
 ## Como gerar seu Souza
 

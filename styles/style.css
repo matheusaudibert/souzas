@@ -732,6 +732,168 @@ a:hover {
   white-space: nowrap;
 }
 
+/* Quiz */
+.quiz {
+  max-width: 560px;
+  padding-bottom: 64px;
+}
+
+.quiz-title {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.quiz-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.quiz-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.quiz-stat {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.quiz-stat strong {
+  color: var(--text);
+}
+
+.quiz-card {
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.quiz-image {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+}
+
+/* A foto começa borrada (dá para intuir formas e cores, mas não o souza)
+   e revela com transição. O clip evita o blur vazar pela moldura. */
+.quiz-image-clip {
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.quiz-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: blur(24px);
+  transform: scale(1.15);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.quiz-image.revealed img {
+  filter: none;
+  transform: none;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.quiz-option {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.quiz-option:hover:enabled {
+  color: var(--link);
+  border-color: var(--link);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Verde/vermelho da paleta GitHub, com variantes para o tema escuro
+   (mesmo padrão das cores do pódio no ranking). */
+.quiz-option.correct {
+  color: #1a7f37;
+  border-color: #1a7f37;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.quiz-option.wrong {
+  color: #cf222e;
+  border-color: #cf222e;
+  opacity: 1;
+}
+
+:root[data-theme="dark"] .quiz-option.correct {
+  color: #3fb950;
+  border-color: #3fb950;
+}
+
+:root[data-theme="dark"] .quiz-option.wrong {
+  color: #f85149;
+  border-color: #f85149;
+}
+
+.quiz-footer {
+  margin-top: 16px;
+}
+
+.quiz-result {
+  margin-bottom: 12px;
+}
+
+.quiz-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.quiz-next {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: #ffffff;
+  background: var(--link);
+  border: 1px solid var(--link);
+  transition: opacity 0.15s ease;
+}
+
+.quiz-next:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Empty state */
 .empty {
   padding: 48px 0;

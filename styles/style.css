@@ -140,6 +140,12 @@ a:hover {
   object-fit: cover;
 }
 
+/* No desktop o wrapper é transparente para o flex do header; no mobile
+   ele vira o dropdown do menu hambúrguer. */
+.header-menu {
+  display: contents;
+}
+
 .header-nav {
   display: flex;
   align-items: center;
@@ -258,7 +264,7 @@ a:hover {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  .header-links {
+  .header-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -274,22 +280,41 @@ a:hover {
     box-shadow: 0 8px 16px rgba(31, 35, 40, 0.1);
   }
 
-  .menu-open .header-links {
+  .menu-open .header-menu {
     display: flex;
   }
 
-  .header-links a {
-    padding: 12px 0;
+  /* Navs viram itens diretos do dropdown, formando uma lista única. */
+  .header-menu .header-nav,
+  .header-menu .header-links {
+    display: contents;
   }
 
-  .header-links a + a {
+  .header-menu a {
+    padding: 12px 0;
+    color: var(--text);
     border-top: 1px solid var(--border);
+  }
+
+  .header-nav a:first-child {
+    border-top: 0;
   }
 
   .header-links a.download-original {
     color: var(--text);
     border: 0;
+    border-top: 1px solid var(--border);
     border-radius: 0;
+  }
+
+  /* Só no desktop: convites de estrela e PR saem do menu mobile. */
+  .header-links a.desktop-only {
+    display: none;
+  }
+
+  /* A logo e o Home do menu já levam de volta à galeria. */
+  .back-link {
+    display: none;
   }
 }
 
@@ -920,7 +945,7 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-  .header-links {
+  .header-menu {
     padding: 4px 8px;
   }
 }

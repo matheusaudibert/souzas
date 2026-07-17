@@ -17,7 +17,7 @@
   });
 
   // Fecha o menu ao clicar em um link ou fora do header.
-  header.querySelectorAll(".header-links a").forEach(function (link) {
+  header.querySelectorAll(".header-menu a").forEach(function (link) {
     link.addEventListener("click", function () {
       setOpen(false);
     });
